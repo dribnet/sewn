@@ -2,10 +2,6 @@
 #include "sewnApp.h"
 
 
-ExportType my_type[] = "App";
-ExportApp *makeApp(void) { return new sewnApp(); }
-
-
 sewnApp::sewnApp()
 {
   begun = false;
