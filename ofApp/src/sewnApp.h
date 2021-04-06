@@ -1,21 +1,20 @@
-
-#include "acApp.h"
-#include "acu.h"
+#pragma once
+#include "ofMain.h"
 #include "block.h"
 
-class sewnApp : public acApp
+class sewnApp : public ofBaseApp
 {
 public:
   sewnApp();
   void draw();
-  void mouseUp(float x, float y, int button);
-  void resize( float posX, float posY, float width, float height);
-  virtual void mouseMove(float x, float y);
-  virtual void mouseDrag(float x, float y, int button);
+  void mouseReleased(int x, int y, int button);
+  void windowResized(int width, int height);
+  virtual void mouseMoved(int x, int y);
+  virtual void mouseDragged(int x, int y, int button);
 
 
   block *B;
   float T;
-  boolean begun;
+  bool begun;
   float mX,mY;
 };

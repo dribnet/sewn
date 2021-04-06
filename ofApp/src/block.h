@@ -1,5 +1,5 @@
-
-#include "acu.h"
+#pragma once
+#include "ofMain.h"
 
 enum SplitType { VERTICAL, HORIZONTAL };
 enum animationType { NONE, LB_IN, LB_OUT, LT_IN, LT_OUT,
@@ -17,17 +17,17 @@ public:
   block();
   ~block();
   
-  boolean hasChildren;
+  bool hasChildren;
   block* parent;
   block *childA, *childB;
   enum SplitType split;
   float splitPercent;
   float L, B, R, T;
-  boolean  LBRT[4];
+  bool  LBRT[4];
   float cr, cg, cb;
   float animateTime, complete;
   float unsplitCountdown;
-  boolean unsplitBegun;
+  bool unsplitBegun;
   enum animationType animType;
 
   void Draw();

@@ -1,6 +1,9 @@
 
 #include "sewnApp.h"
 
+#define THE_LEFT_BUTTON 0
+#define THE_MIDDLE_BUTTON 1
+#define THE_RIGHT_BUTTON 2
 
 sewnApp::sewnApp()
 {
@@ -12,20 +15,23 @@ sewnApp::sewnApp()
   B = new block();
   B->setRect( 0.2*400,0.2*400,0.8*400,0.8*400 );
   mX = mY = 0;
-  glutSetCursor( GLUT_CURSOR_NONE );
+  // glutSetCursor( GLUT_CURSOR_NONE );
 }
 
-void sewnApp::resize( float posX, float posY, float width, float height)
+void sewnApp::windowResized(int width, int height)
 {  
-  X = posX;
-  Y = posY;
-  B->setRect( 0.2*W,0.2*H,0.8*W,0.8*H );
-  W = width;
-  H = height;
+  // X = posX;
+  // Y = posY;
+  // B->setRect( 0.2*width,0.2*height,0.8*width,0.8*height );
+  // W = width;
+  // H = height;
 }
 
 void sewnApp::draw()
 {
+  int W = ofGetWindowWidth();
+  int H = ofGetWindowHeight();
+
   B->setRect( 0.2*W,0.2*H,0.8*W,0.8*H );
   glColor3f(1,1,1);
   
@@ -82,9 +88,9 @@ void sewnApp::draw()
   glRectf( mX-9,mY-9,mX+9,mY+9 );
 }
 
-void sewnApp::mouseUp(float x, float y, int button)
+void sewnApp::mouseReleased(int x, int y, int button)
 {
-  if ( button==GLUT_LEFT_BUTTON )
+  if ( button==THE_LEFT_BUTTON )
     {
       begun = true;
 	  
@@ -93,7 +99,7 @@ void sewnApp::mouseUp(float x, float y, int button)
 	C->Split( HORIZONTAL, 0.5  );
     }
   
-  if ( button==GLUT_MIDDLE_BUTTON )
+  if ( button==THE_MIDDLE_BUTTON )
     {
       block* C = B->MouseInBlock(x,y); // B->GetLargestEdgeBlock();
       if ( C )
@@ -115,7 +121,7 @@ void sewnApp::mouseUp(float x, float y, int button)
      else
      C->Split( VERTICAL, 0.5 ); */
 
-  if ( button==GLUT_RIGHT_BUTTON )
+  if ( button==THE_RIGHT_BUTTON )
     {
       block* C = B->MouseInBlock(x,y); // B->GetLargestEdgeBlock();
      if ( C && C->parent )
@@ -135,14 +141,14 @@ void sewnApp::mouseUp(float x, float y, int button)
 }
 
 
-void sewnApp::mouseMove(float x, float y)
+void sewnApp::mouseMoved(int x, int y)
 {
   mX = x;
   mY = y;
 }
 
 
-void sewnApp::mouseDrag(float x, float y, int button)
+void sewnApp::mouseDragged(int x, int y, int button)
 {
   mX = x;
   mY = y;

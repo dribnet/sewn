@@ -1,6 +1,10 @@
 
 #include "block.h"
 
+#define acuLine2f ofDrawLine
+#define acuCurrentTimeMillis ofGetElapsedTimeMillis
+#define acuLerpf(f,a,b) ofLerp(a,b,f)
+
 float block::pullVr = 0.4;
 float block::pullVg = 0.0;
 float block::pullVb = 0.0;
@@ -250,8 +254,8 @@ void block::UpdateChildren()
 	A = 1.0 - animateTime;
       else
 	A = animateTime;
-      float W = acuGetInteger( ACU_WINDOW_WIDTH );
-      float H = acuGetInteger( ACU_WINDOW_HEIGHT );
+      // float W = acuGetInteger( ACU_WINDOW_WIDTH );
+      // float H = acuGetInteger( ACU_WINDOW_HEIGHT );
       if ( A > 1.0 ) A = 1.0;
       if ( A < 0.0 ) A = 0.0;
 
