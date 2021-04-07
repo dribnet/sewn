@@ -15,6 +15,7 @@ sewnApp::sewnApp()
   B = new block();
   B->setRect( 0.2*400,0.2*400,0.8*400,0.8*400 );
   mX = mY = 0;
+  ofBackground(0, 0, 0);
   // glutSetCursor( GLUT_CURSOR_NONE );
 }
 
