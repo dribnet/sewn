@@ -56,7 +56,7 @@ function doSimulatedMousePress(whichButton, mx, my) {
 function mouseReleased() {
   let flippedY = height - mouseY;
   if (mouseButton == RIGHT || (mouseButton == LEFT && keyIsDown(CONTROL))) {
-    doSimulatedMousePress(LEFT, mouseX, flippedY);
+    doSimulatedMousePress(RIGHT, mouseX, flippedY);
   }
   else if (mouseButton == CENTER || (mouseButton == LEFT && keyIsDown(OPTION))) {
     doSimulatedMousePress(CENTER, mouseX, flippedY);
