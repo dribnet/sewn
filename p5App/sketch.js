@@ -18,13 +18,13 @@ function setup () {
   for (let element of document.getElementsByClassName("p5Canvas")) {
     element.addEventListener("contextmenu", (e) => e.preventDefault());
   }
+  background(0);
 }
 
 function draw () {
   translate(0, height); 
   scale(1, -1);
 
-  background(0);
   B.setRect( 0.2*width,0.2*height,0.8*width,0.8*height );
   fill(255);
 
