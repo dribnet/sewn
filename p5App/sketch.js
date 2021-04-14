@@ -1,19 +1,18 @@
-const canvasWidth = 960;
-const canvasHeight = 720;
+const canvasWidth = 1024;
+const canvasHeight = 768;
 
 let B = null;
-let mx=null, my=null;
 
 function setup () {
-  createCanvas(canvasWidth, canvasHeight);
+  let main_canvas = createCanvas(canvasWidth, canvasHeight);
+  if (document.getElementById('sewnContainer') != null) {
+    main_canvas.parent('sewnContainer');
+  }
+
   rectMode(CORNERS);
 
   B = new Block();
   B.setRect(0.2*400,0.2*400,0.8*400,0.8*400);
-  mx = 0;
-  my = 0;
-  // noLoop();
-  // colorMode(HSB, 360, 100, 100, 1);
 
   // enable right click
   for (let element of document.getElementsByClassName("p5Canvas")) {
