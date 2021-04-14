@@ -71,13 +71,16 @@ function keyTyped() {
   if (key == 'a' || key == 'd') {
     let direction = (key == 'd');
     doSimulatedMousePress(LEFT, mouseX, flippedY, direction);
+    return false;
   }
   else if (key == ' ') {
     doSimulatedMousePress(CENTER, mouseX, flippedY);
+    return false;
   }
   else if (key == 'w' || key == 's') {
     let direction = (key == 'w');
     doSimulatedMousePress(RIGHT, mouseX, flippedY, direction);
+    return false;
   }
 }
 
@@ -86,13 +89,16 @@ function keyPressed() {
   if (keyCode == LEFT_ARROW || keyCode == RIGHT_ARROW) {
     let direction = (keyCode == RIGHT_ARROW);
     doSimulatedMousePress(LEFT, mouseX, flippedY, direction);
+    return false;
   }
   if (keyCode == UP_ARROW || keyCode == DOWN_ARROW) {
     let direction = (keyCode == UP_ARROW);
     doSimulatedMousePress(RIGHT, mouseX, flippedY, direction);
+    return false;
   }
   else if (keyCode == BACKSPACE || keyCode == DELETE) {
     doSimulatedMousePress(CENTER, mouseX, flippedY);
+    return false;
   }
 }
 
