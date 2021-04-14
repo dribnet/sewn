@@ -1,0 +1,39 @@
+<head>
+    <script language="javascript" type="text/javascript" src="p5App/p5_1.2.0.js"></script>
+    <script language="javascript" type="text/javascript" src="p5App/block.js"></script>
+    <script language="javascript" type="text/javascript" src="p5App/sketch.js"></script>
+    <style>
+        body {padding: 30; margin: 30; font-family: Sans-Serif;
+        	font-size:1.8vmin;
+        	background-color:white;}
+		h1,h3,.outer {text-align: center;}
+    </style>
+</head>
+<body>
+  <h1>sewn by Jared Shiffman (1998)</h1>
+  <h3>[2021 p5js port by @dribnet]</h3>
+
+    <div class="outer">
+        <div class="inner">
+            <div id="sewnContainer"></div>
+        </div>
+	<p>(instructions: move mouse and click mouse buttons or press a/s/d)
+    </div>
+<p>
+<hr>
+<p>
+<h2>About</h2>
+
+sewn is a beautiful computational study in balance created by Jared Shiffman while he was a student at the <a href="https://acg.media.mit.edu/">Aesthetics and Computation group (ACG)</a> at the <a href="https://www.media.mit.edu/">MIT Media Lab<a> in 1998. Using the three mouse buttons the canvas can be manipulated to create and remove rectangles vertically and horizontally. The overall shape responds organicly and maintains a sense of balance both in division of colors and shapes - with rectangles coming to rest to have equal areas throughout.<p>
+
+Jared was one of the founding members of the ACG group and had an unparalled skill for executing reactive works that felt simultaneously deeply computational and spontaneously organic.<p>
+
+This online version is a restoration port by @dribnet of the orignal version written in C++ and using the <a href="http://github.com/dribnet/acu">ACU library</a> which Jared also co-authored at the Media Lab. This hosted respository contains two ports - the first is to <a href="https://openframeworks.cc/">OpenFrameworks</a> which itself is based closely on the code and conventions of the ACU library and so requires very few code changes. The second port was a more involved rewrite into <a href="https://p5js.org/">p5.js</a> (which inherits some ACU coding conventions via <a href="https://processing.org/">Processing</a>) and included several adjustments to control flow and graphics logic. Extreme care was taken to stick as close to the original as possible studying both the initial OpenFrameworks port as well as images, videos, and original executable files. The original code and both ports can be found in <a href="https://github.com/dribnet/sewn">the accompaning repository</a>.<p>
+
+This port based on the exact version of the code shown pubicly at the <a href="https://acg.media.mit.edu/projects/CooperUnion/retrospective/">2000 Cooper Hewitt ACG retrospective exhibition</a>. It has the additional feature that each subdivided rectangle self destructs after 30 seconds so that the overall form heals and resets itself over time.<p>
+
+<a href="https://acg.media.mit.edu/people/jarfish/sewn/">original sewn page</A>
+
+<p>
+
+</body>
