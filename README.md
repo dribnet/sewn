@@ -1,9 +1,7 @@
-Restoration of Jared Schiffman's sewn project
+restoration of Jared Schiffman's sewn
 =====
 
-<center>
 [Runnable version and more information on the main web page here](https://dribnet.github.io/sewn/)
-</center>
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/945979/113794897-b4921980-979f-11eb-93c6-af7e8baeeed6.jpg" alt="ScreenShot"/>
