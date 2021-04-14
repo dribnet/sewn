@@ -129,7 +129,6 @@ function Block() {
     this.childA.parent = this;
     this.childB.parent = this;
 
-
     let choose = random([false, true]);
     if (extra_hint !== undefined) {
       choose = extra_hint;
@@ -368,8 +367,8 @@ function Block() {
   }
 
   this.setLerpRect = function(A, 
-                   l1, t1, r1, b1,
-                   l2, t2, r2, b2 ) {
+                   l1, b1, r1, t1,
+                   l2, b2, r2, t2 ) {
     A = (A<0) ? 0 : A;
     A = (A>1) ? 1 : A;
     A = Math.pow( A, 0.7 );
@@ -387,7 +386,7 @@ function Block() {
 
   this.MouseInBlock = function(X, Y) {
     if(this.hasChildren) {
-      b1 = this.childA.MouseInBlock(X, Y);
+      let b1 = this.childA.MouseInBlock(X, Y);
       if (b1 != null) {
         return b1;
       }
