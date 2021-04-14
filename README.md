@@ -1,11 +1,15 @@
-Restoration of Jared Schiffman's sewn project
+restoration of Jared Schiffman's sewn
 =====
+
+[Runnable version and more information on the main web page here](https://dribnet.github.io/sewn/)
+
+---
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/945979/113794897-b4921980-979f-11eb-93c6-af7e8baeeed6.jpg" alt="ScreenShot"/>
 </p>
 
-This is a port of Jared Schiffman's sewn project to OpenFrameworks and p5.js.
+A restoration port of Jared Schiffman's sewn project to OpenFrameworks and p5.js.
 
 Sewn is an interactive sketch originally created in 1998 when Jared was a student at the Aesthetics and Computation group (ACG) at the MIT Media Lab.
 
@@ -18,6 +22,7 @@ Download the latest version of OpenFrameworks and then clone this repository int
 
 p5.js version
 -----
+Should just run from index.html
 
 Notes
 -----
