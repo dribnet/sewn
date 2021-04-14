@@ -113,7 +113,7 @@ function Block() {
     }
   }
 
-  this.Split = function(S, P) {
+  this.Split = function(S, P, extra_hint) {
     if(this.hasChildren) {
       // don't try to split twice
       return;
@@ -129,7 +129,11 @@ function Block() {
     this.childA.parent = this;
     this.childB.parent = this;
 
+
     let choose = random([false, true]);
+    if (extra_hint !== undefined) {
+      choose = extra_hint;
+    }
     this.animateTime = 0.0;
 
     if (this.split == VERTICAL) {

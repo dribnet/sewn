@@ -34,21 +34,21 @@ function draw () {
   B.drawLines();
 }
 
-function doSimulatedMousePress(whichButton, mx, my) {
+function doSimulatedMousePress(whichButton, mx, my, extra_info) {
   C = B.MouseInBlock(mx, my);
-  if (whichButton == RIGHT) {
+  if (whichButton == CENTER) {
     if (C != null && C.parent != null) {
       C.parent.UnsplitBegin();
     }
   }
-  else if (whichButton == CENTER) {
+  else if (whichButton == RIGHT) {
     if ( C != null ){
-      C.Split( VERTICAL, 0.5  );
+      C.Split( VERTICAL, 0.5, extra_info );
     }
   }
   else if (whichButton == LEFT) {
     if ( C != null ){
-      C.Split( HORIZONTAL, 0.5  );
+      C.Split( HORIZONTAL, 0.5, extra_info );
     }
   }
 }
@@ -68,27 +68,31 @@ function mouseReleased() {
 
 function keyTyped() {
   let flippedY = height - mouseY;
-  if (key == 'a' || key == '1') {
-    doSimulatedMousePress(LEFT, mouseX, flippedY);
+  if (key == 'a' || key == 'd') {
+    let direction = (key == 'd');
+    doSimulatedMousePress(LEFT, mouseX, flippedY, direction);
   }
-  else if (key == 's' || key == '2') {
+  else if (key == ' ') {
     doSimulatedMousePress(CENTER, mouseX, flippedY);
   }
-  else if (key == 'd' || key == '3') {
-    doSimulatedMousePress(RIGHT, mouseX, flippedY);
+  else if (key == 'w' || key == 's') {
+    let direction = (key == 'w');
+    doSimulatedMousePress(RIGHT, mouseX, flippedY, direction);
   }
 }
 
 function keyPressed() {
   let flippedY = height - mouseY;
-  if (keyCode == LEFT_ARROW) {
-    doSimulatedMousePress(LEFT, mouseX, flippedY);
+  if (keyCode == LEFT_ARROW || keyCode == RIGHT_ARROW) {
+    let direction = (keyCode == RIGHT_ARROW);
+    doSimulatedMousePress(LEFT, mouseX, flippedY, direction);
   }
   if (keyCode == UP_ARROW || keyCode == DOWN_ARROW) {
-    doSimulatedMousePress(CENTER, mouseX, flippedY);
+    let direction = (keyCode == UP_ARROW);
+    doSimulatedMousePress(RIGHT, mouseX, flippedY, direction);
   }
-  else if (keyCode == RIGHT_ARROW) {
-    doSimulatedMousePress(RIGHT, mouseX, flippedY);
+  else if (keyCode == BACKSPACE || keyCode == DELETE) {
+    doSimulatedMousePress(CENTER, mouseX, flippedY);
   }
 }
 
