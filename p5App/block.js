@@ -1,5 +1,5 @@
 // this decay can be disabled by the main program
-var decay_is_active;
+var decay_is_active = true;
 
 // split type
 const VERTICAL = 0;
