@@ -5,9 +5,7 @@ restoration of Jared Schiffman's sewn
 
 ---
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/945979/113794897-b4921980-979f-11eb-93c6-af7e8baeeed6.jpg" alt="ScreenShot"/>
-</p>
+![sewn screenshot](https://github.com/dribnet/sewn/blob/gh-pages/sewn_card.gif?raw=true)
 
 A restoration port of Jared Schiffman's sewn project to OpenFrameworks and p5.js.
 
