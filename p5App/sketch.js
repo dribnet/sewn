@@ -68,17 +68,17 @@ function mouseReleased() {
 
 function keyTyped() {
   let flippedY = height - mouseY;
-  if (key == 'a' || key == 'd') {
-    let direction = (key == 'd');
+  if (key == 'a' || key == 'd' || key == '4' || key == '6') {
+    let direction = ((key == 'd') || (key == '6'))
     doSimulatedMousePress(LEFT, mouseX, flippedY, direction);
     return false;
   }
-  else if (key == ' ') {
+  else if (key == ' ' || key == '5') {
     doSimulatedMousePress(CENTER, mouseX, flippedY);
     return false;
   }
-  else if (key == 'w' || key == 's') {
-    let direction = (key == 'w');
+  else if (key == 'w' || key == 's' || key == '8' || key == '2') {
+    let direction = ((key == 'w') || (key == '8'))
     doSimulatedMousePress(RIGHT, mouseX, flippedY, direction);
     return false;
   }
