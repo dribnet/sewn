@@ -1,3 +1,6 @@
+// this decay can be disabled by the main program
+var decay_is_active;
+
 // split type
 const VERTICAL = 0;
 const HORIZONTAL = 1;
@@ -105,7 +108,7 @@ function Block() {
       if ( this.childA.hasChildren || this.childB.hasChildren )
         this.unsplitCountdown = theTime;
       else {
-        if ( theTime - this.unsplitCountdown > 30000 ) {
+        if ( decay_is_active && theTime - this.unsplitCountdown > 30000 ) {
           // 30 second delay
           this.UnsplitBegin();
         }
