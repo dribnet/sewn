@@ -8,6 +8,7 @@ function setup () {
   if (document.getElementById('sewnContainer') != null) {
     main_canvas.parent('sewnContainer');
   }
+  frameRate(60);
 
   rectMode(CORNERS);
 
